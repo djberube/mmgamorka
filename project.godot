@@ -10,6 +10,16 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "KinematicBody2D",
+"class": "Animal",
+"language": "GDScript",
+"path": "res://scenes/characters/Animal.gd"
+}, {
+"base": "StaticBody2D",
+"class": "Building",
+"language": "GDScript",
+"path": "res://scenes/items/Building.gd"
+}, {
+"base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
 "path": "res://scenes/characters/Character.gd"
@@ -44,6 +54,16 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scenes/Navigation.gd"
 }, {
+"base": "Item",
+"class": "PowerUp",
+"language": "GDScript",
+"path": "res://scenes/items/PowerUp.gd"
+}, {
+"base": "StaticBody2D",
+"class": "ResourceNode",
+"language": "GDScript",
+"path": "res://scenes/items/ResourceNode.gd"
+}, {
 "base": "Node2D",
 "class": "ShotFX",
 "language": "GDScript",
@@ -55,6 +75,8 @@ _global_script_classes=[ {
 "path": "res://scenes/World.gd"
 } ]
 _global_script_class_icons={
+"Animal": "",
+"Building": "",
 "Character": "",
 "CharacterAI": "",
 "CharacterControls": "",
@@ -62,6 +84,8 @@ _global_script_class_icons={
 "Effect": "",
 "Item": "",
 "MapNavigation": "",
+"PowerUp": "",
+"ResourceNode": "",
 "ShotFX": "",
 "WorldNode": ""
 }
@@ -78,6 +102,11 @@ Log="*res://scripts/Log.gd"
 EventBus="*res://scripts/EventBus.gd"
 Network="*res://scripts/Network.gd"
 Assets="*res://scripts/Assets.gd"
+CraftingSystem="*res://scripts/CraftingSystem.gd"
+WeatherSystem="*res://scripts/WeatherSystem.gd"
+QuestSystem="*res://scripts/QuestSystem.gd"
+UnitProductionSystem="*res://scripts/UnitProductionSystem.gd"
+FactionSystem="*res://scripts/FactionSystem.gd"
 
 [display]
 

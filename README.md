@@ -1,57 +1,213 @@
-# AGENTS 0.1
+# AGENTS 0.1 - AAA EPIC EDITION
 
-Simple top-down multiplayer game in Godot. It is a pure hobby project written just to find out how difficult is to write a server-governed multi-player game in Godot.
+**The Ultimate Survival-Crafting-RTS-Action Multiplayer Game!**
 
-It's not a complete game, it only has a few essential features and can be used as an inspiration on how to deal with server-client communication in your Godot projects.
+An incredibly ambitious top-down multiplayer game combining the best features from **Raft**, **The Long Dark**, **Age of Empires 2**, and **Pac-Man**! What started as a simple multiplayer demo has evolved into a feature-packed AAA gaming experience with survival mechanics, base building, crafting, wildlife, weather systems, and much more!
 
 ![screenshot](assets/screenshot.png)
 
+## NOW WITH EPIC AAA FEATURES!
+
 ## Features
 
-The project features a multiplayer game where each player controls a single character by issuing commands rather than directly controlling the character's movement.
-This was a design choice as such a control scheme is more suitable to slower-paced RPGs (or RTSs) which I'm more interested in than FPSs.
-The code can be easily modified to allow for controlling multiple units (RTS style)
+### CORE GAMEPLAY
+- **Advanced Character Control** - Command-based movement system perfect for tactical gameplay
+- **Multiplayer Support** - Full server authority with lobby, chat, and seamless networking
+- **5-Slot Inventory System** - Equippable weapons, tools, and consumables
 
-- *game features*
-  - character movement around a map
-  - inventory & usable items
-  - scanline weapons
-  - basic health & damage logic
-- *multi-player code*
-  - lobby & chat
-  - full server authority sync scheme
-  - fast unreliable updates for the world state
-  - slower reliable updates for events (e.g. player join, item pickup, effects, etc.)
-- *tile sets*
-  - all tile types used (auto-tiles, atlas tiles, single tiles)
-  - working *YSort* for large single tiles (with the correct origin at the bottom)
-- *AI*
-  - collision-based sensors for hearing and sight
-  - A* navigation with preferred paths (roads) and obstacles working with tilesets collision & navigation shapes
-  - rudimentary AI for NPCs (walk around and say lines)
- 
-**There will not be any active development soon but do not miss the dev branch where you can find some interesting features around AI**
-- light-weight, script-driven GOAP in Godot
-- A needs system that generates goals for GOAP to plan and execute
-- A memory system that allows an agent to remember significant facts and let GOAP utilize it when planning
+### SURVIVAL MECHANICS (The Long Dark Inspired) 🥶
+- **Hunger & Thirst System** - Manage food and water to stay alive
+- **Temperature System** - Stay warm or freeze to death in harsh conditions
+- **Fatigue & Stamina** - Rest and manage energy for running and activities
+- **Environmental Hazards** - Survive blizzards, storms, and extreme weather
+- **Health Management** - Heal wounds, cure ailments, and avoid starvation/dehydration
+
+### RESOURCE GATHERING & CRAFTING (Raft Inspired) 🪓
+- **Resource Nodes** - Chop trees, mine rocks, gather metal ore, pick berries
+- **Comprehensive Crafting System** - 40+ recipes across 3 tech tiers
+- **Tech Tree Progression** - Unlock advanced recipes as you level up
+- **Tool Crafting** - Stone/Iron axes, pickaxes, fishing rods, and more
+- **Weapon Crafting** - Spears, bows, swords, and advanced weapons
+- **Resource Management** - Wood, stone, metal, food, and gold economy
+
+### BASE BUILDING & CONSTRUCTION (Raft + AoE2 Inspired) 🏗️
+- **19 Building Types** - From simple campfires to advanced forges
+- **Construction System** - Buildings take time to build with blueprint mode
+- **Defensive Structures** - Wooden walls, stone walls, and watchtowers
+- **Resource Production** - Farm plots, mills, and resource camps
+- **Raft Building** - Construct water vehicles for ocean exploration
+- **Building Benefits** - Campfires provide warmth, storage chests expand inventory
+
+### FARMING & FOOD PRODUCTION 🌾
+- **7 Crop Types** - Wheat, potato, carrot, tomato, corn, berries, and more
+- **Growth Stages** - Watch crops grow from seedlings to harvest
+- **Irrigation System** - Water crops and use fertilizer for faster growth
+- **Weather Effects** - Rain waters crops, cold slows growth
+- **Food Preservation** - Cook meat, bake bread, and prepare meals
+
+### WEATHER & DAY/NIGHT CYCLE ⛈️
+- **Dynamic Time System** - 24-hour day/night cycle (10 minutes real-time)
+- **7 Weather Types** - Clear, cloudy, rain, snow, storm, blizzard, fog
+- **Seasonal System** - Spring, summer, autumn, winter with unique effects
+- **Environmental Effects** - Temperature changes, visibility reduction, crop growth modifiers
+- **Survival Challenges** - Freezing nights, deadly blizzards, scorching heat
+
+### WILDLIFE & HUNTING 🦌
+- **8 Animal Types** - Deer, rabbits, wolves, bears, boars, foxes, birds, fish
+- **Animal AI Behaviors** - Passive (flee), neutral (ignore unless provoked), aggressive (attack on sight)
+- **Hunting System** - Track and hunt animals for meat and resources
+- **Dangerous Predators** - Wolves and bears that will attack players
+- **Resource Drops** - Meat, hide, and experience from hunted animals
+
+### RTS-STYLE UNIT PRODUCTION (AoE2 Inspired) ⚔️
+- **20+ Unit Types** - Villagers, militia, archers, knights, siege weapons
+- **Training Queues** - Queue multiple units at production buildings
+- **Population System** - Manage population limits with houses
+- **Unit Upgrades** - Progress through Dark Age → Feudal → Castle → Imperial
+- **Military Buildings** - Barracks, archery range, stable, siege workshop
+- **Economic Buildings** - Houses, markets, lumber camps, mining camps
+
+### POWER-UPS & COLLECTIBLES (Pac-Man Inspired) ⭐
+- **7 Power-Up Types** - Speed boost, damage boost, invincibility, health packs, mega points
+- **Respawning System** - Power-ups respawn after collection
+- **Score System** - Earn points with combo multipliers (up to 10x!)
+- **Temporary Buffs** - Become invincible, run faster, deal more damage
+- **Visual Effects** - Glowing power-ups with floating animations
+
+### QUEST & MISSION SYSTEM 📜
+- **16+ Quests** - Tutorial quests, survival challenges, building objectives
+- **Quest Categories** - Gathering, hunting, crafting, building, exploration, progression
+- **Repeatable Quests** - Daily quests for consistent rewards
+- **Quest Rewards** - Experience, gold, resources, and unlocks
+- **Objective Tracking** - Track progress on multiple active quests
+
+### PROGRESSION & LEVELING 📈
+- **Experience System** - Gain XP from crafting, gathering, hunting, quests
+- **Level-Up System** - Level up for stat boosts and skill points
+- **Skill Points** - Spend on upgrades and abilities
+- **Tech Tiers** - Unlock advanced recipes and buildings as you progress
+- **Score Tracking** - High scores with combo multipliers
+
+### FACTION & REPUTATION SYSTEM 🤝
+- **9 Factions** - Players, NPCs, bandits, wildlife, monsters, traders, guards
+- **Dynamic Relationships** - Allied, friendly, neutral, unfriendly, hostile
+- **Reputation System** - Actions affect faction standings
+- **Faction Conflicts** - Factions fight based on relationships
+- **Reputation Consequences** - Killing friendlies hurts reputation, helping improves it
+
+### ENHANCED UI/UX 🎨
+- **Comprehensive HUD** - Health, hunger, thirst, stamina, temperature bars
+- **Resource Display** - Real-time tracking of wood, stone, metal, food, gold
+- **Environment Info** - Time of day, weather, temperature display
+- **Crafting Menu** - Browse recipes by category with requirements
+- **Quest Panel** - View available and active quests
+- **Level & XP Display** - Track progression and skill points
+- **Notifications** - Level-up alerts, critical warnings, achievements
+
+### MULTIPLAYER & NETWORKING 🌐
+- **Server-Client Architecture** - Full server authority for fair gameplay
+- **Lobby System** - Player list, chat, and game setup
+- **Fast State Updates** - Unreliable RPC for smooth movement
+- **Reliable Events** - Item pickups, damage, effects synced perfectly
+- **Network Optimization** - Efficient state synchronization
+
+### ORIGINAL FEATURES
+- **A* Pathfinding** - Smart navigation with road preferences
+- **Collision-Based Sensors** - AI sight and hearing detection
+- **YSort Rendering** - Proper depth sorting for 2D sprites
+- **Scanline Weapons** - Raycasting-based shooting mechanics
+- **Visual Effects** - Hit effects, healing, death animations, level-up fx
   
-## Design Philosophy 
+## Technical Architecture
 
-The main principle I followed was **make it as simple as possible**. There are some detailed tutorials but often cover too many non-essential features. I tried to put just a bare minumum to make it playable and to showcase essential features in the multiplayer game use-case. Currently, the whole project has ~1200 loc.
+### NEW SYSTEMS ADDED
+- **CraftingSystem** (Autoload) - Manages 40+ recipes with tech tree progression
+- **WeatherSystem** (Autoload) - Dynamic weather, seasons, and day/night cycle
+- **QuestSystem** (Autoload) - Quest tracking, objectives, and rewards
+- **UnitProductionSystem** (Autoload) - RTS-style unit training and management
+- **FactionSystem** (Autoload) - Reputation and faction relationships
 
-I also tried to follow best practices recommended by the Godot team (like aggregation over inheritance, encapsulating scripts to nodes they affect, etc.) but to keep it simple, there are some tradeoffs. Many things can be (and should be) done differently for the bigger project. Anyway, I believe in short iterations and adding stuff only when necessary.
+### NEW CLASSES
+- **Character** (Enhanced) - Now with survival stats, resources, leveling, power-ups
+- **Animal** - Wildlife AI with passive/neutral/aggressive behaviors
+- **Building** - Constructible structures with production and benefits
+- **ResourceNode** - Harvestable trees, rocks, ore veins, berry bushes
+- **PowerUp** - Collectible Pac-Man style power-ups
+- **FarmPlot** - Advanced farming with crop growth stages
 
-For the net code, I used Godot's high-level multiplayer framework which works perfectly for my use-case.
-I've mixed the server and the client code and extensively used `remotesync` keyword where any update to both server/client was needed, occasionally adding `master/puppet` to indicate special cases.
+### Code Structure
+- **Server Authority** - All game logic runs on server for cheat prevention
+- **Component-Based** - Characters use modular components (AI, Sensors, Controls, Inventory)
+- **Network Optimized** - Fast unreliable updates for movement, reliable for events
+- **Autoload Managers** - Global systems accessible throughout the game
+- **Signal-Based** - Event-driven architecture for decoupled systems
 
-I've separated the server section and the remote section in the code so it can be seen what runs on the server only and what's propagated to clients. The code isn't fully commented but should be self-explanatory. I tried to explain myself when the code started to look hairy.
-  
-## Future Development
+## New Files Added
 
-The project isn't by any means feature complete and I do not guarantee or plan to add new features in the near future.
-I might continue with the development and put more stuff in (especially around NPCs AI support) but it really depends on my free time.
+### Scripts
+- `/scripts/CraftingSystem.gd` - Recipe management and tech tree
+- `/scripts/WeatherSystem.gd` - Environmental simulation
+- `/scripts/QuestSystem.gd` - Quest and mission handling
+- `/scripts/UnitProductionSystem.gd` - RTS unit training
+- `/scripts/FactionSystem.gd` - Faction relationships
 
-Anyway, I welcome comments, suggestions, or bug reports but cannot guarantee I'll integrate it. Feel free to fork it for yourself.
+### Scenes
+- `/scenes/characters/Animal.gd` - Wildlife behavior
+- `/scenes/items/Building.gd` - Base construction
+- `/scenes/items/ResourceNode.gd` - Resource gathering
+- `/scenes/items/PowerUp.gd` - Collectible power-ups
+- `/scenes/items/FarmPlot.gd` - Farming system
+- `/scenes/ui/EnhancedHUD.gd` - Comprehensive HUD
+
+## How to Play
+
+### Controls
+- **Left Click** - Move character
+- **Right Click** - Turn and use equipped item
+- **Q** - Pick up item
+- **W** - Drop current item
+- **1-5** - Equip inventory slots
+- **Space** - Unequip item
+- **Tab** - Open crafting menu
+- **Page Up** - Open quest menu
+- **Shift** - Run (consumes stamina)
+
+### Survival Tips
+1. **Manage Your Needs** - Keep hunger and thirst above 20% to avoid damage
+2. **Stay Warm** - Build campfires in cold weather to maintain temperature
+3. **Gather Resources** - Chop trees and mine rocks to unlock crafting
+4. **Build a Base** - Construct workbenches to unlock advanced recipes
+5. **Hunt Carefully** - Passive animals flee, but wolves and bears attack!
+6. **Complete Quests** - Gain experience and rewards for progression
+7. **Farm Food** - Plant crops for sustainable food sources
+8. **Watch the Weather** - Seek shelter during blizzards and storms
+9. **Collect Power-Ups** - Grab glowing items for temporary advantages
+10. **Level Up** - Gain skill points to unlock abilities and upgrades
+
+## Design Philosophy
+
+This project combines survival, crafting, RTS, and arcade mechanics into a unique multiplayer experience. The architecture follows Godot best practices with component-based design, server authority, and efficient networking.
+
+The expanded feature set demonstrates how to integrate multiple game systems:
+- Resource economy and crafting chains
+- Environmental simulation affecting gameplay
+- Dynamic AI behaviors and faction relationships
+- Progression systems with quests and leveling
+- Building and farming for long-term strategy
+
+All systems are designed to work together: weather affects crops, temperature impacts survival, resources enable crafting, buildings provide benefits, and factions create dynamic relationships.
+
+## Future Enhancements
+
+Potential additions:
+- **Ocean/Water System** - Swimming, fishing, boat navigation
+- **Advanced Particle Effects** - Weather particles, magic effects
+- **Audio System** - Music, ambient sounds, SFX
+- **Skill Trees** - Character specializations and abilities
+- **Trading System** - Economy and merchant NPCs
+- **Dungeons** - Procedurally generated challenges
+- **Boss Fights** - Epic encounters with rewards
+- **Team Mechanics** - Guilds, alliances, PvP
 
 ## License
 
