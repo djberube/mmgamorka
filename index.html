@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Cats: Mining for Josh - The Ultimate Edition</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="game-container">
+        <!-- Header -->
+        <header id="game-header">
+            <h1>🐱 SPACE CATS: MINING FOR JOSH 🚀</h1>
+            <div id="game-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Rocks:</span>
+                    <span id="rocks-count">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Credits:</span>
+                    <span id="credits-count">100</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Territory:</span>
+                    <span id="territory-count">1</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Joshes:</span>
+                    <span id="josh-count">1</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <div id="game-main">
+            <!-- Left Panel - Space Map & Mining -->
+            <div id="left-panel">
+                <div class="panel-header">
+                    <h2>Space Sector</h2>
+                    <div id="minimap-controls">
+                        <button onclick="game.zoomIn()">+</button>
+                        <button onclick="game.zoomOut()">-</button>
+                    </div>
+                </div>
+                <canvas id="game-canvas" width="600" height="600"></canvas>
+                <div id="canvas-controls">
+                    <button onclick="game.toggleAutomation()">⚙️ Toggle Auto-Mine</button>
+                    <button onclick="game.scanSector()">🔍 Scan Sector</button>
+                    <button onclick="game.expandTerritory()">🗺️ Expand Territory</button>
+                </div>
+            </div>
+
+            <!-- Center Panel - Josh Management & Survival -->
+            <div id="center-panel">
+                <!-- Survival Stats -->
+                <div class="panel-section survival-panel">
+                    <h3>Survival Status</h3>
+                    <div class="survival-bars">
+                        <div class="survival-stat">
+                            <label>Health:</label>
+                            <div class="bar-container">
+                                <div id="health-bar" class="bar health-bar" style="width: 100%"></div>
+                            </div>
+                            <span id="health-value">100</span>
+                        </div>
+                        <div class="survival-stat">
+                            <label>Hunger:</label>
+                            <div class="bar-container">
+                                <div id="hunger-bar" class="bar hunger-bar" style="width: 100%"></div>
+                            </div>
+                            <span id="hunger-value">100</span>
+                        </div>
+                        <div class="survival-stat">
+                            <label>Temperature:</label>
+                            <div class="bar-container">
+                                <div id="temp-bar" class="bar temp-bar" style="width: 100%"></div>
+                            </div>
+                            <span id="temp-value">100</span>
+                        </div>
+                        <div class="survival-stat">
+                            <label>Oxygen:</label>
+                            <div class="bar-container">
+                                <div id="oxygen-bar" class="bar oxygen-bar" style="width: 100%"></div>
+                            </div>
+                            <span id="oxygen-value">100</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Josh Units Management -->
+                <div class="panel-section josh-panel">
+                    <h3>Josh Command Center</h3>
+                    <div id="josh-list"></div>
+                    <div class="josh-actions">
+                        <button onclick="game.recruitJosh()">👤 Recruit Josh (50 Credits)</button>
+                        <button onclick="game.trainJosh()">📚 Train Selected Josh</button>
+                        <button onclick="game.assignJosh('mining')">⛏️ Assign to Mining</button>
+                        <button onclick="game.assignJosh('combat')">⚔️ Assign to Combat</button>
+                        <button onclick="game.assignJosh('research')">🔬 Assign to Research</button>
+                    </div>
+                </div>
+
+                <!-- Crafting System -->
+                <div class="panel-section crafting-panel">
+                    <h3>Crafting & Manufacturing</h3>
+                    <div id="crafting-recipes"></div>
+                    <button onclick="game.showCraftingMenu()">🔨 Open Crafting Menu</button>
+                </div>
+            </div>
+
+            <!-- Right Panel - Tech Tree, Combat, & Strategy -->
+            <div id="right-panel">
+                <!-- Tech Tree -->
+                <div class="panel-section tech-panel">
+                    <h3>Technology Research</h3>
+                    <div id="tech-tree"></div>
+                    <div id="current-research">
+                        <p>Current: <span id="research-name">None</span></p>
+                        <div class="bar-container">
+                            <div id="research-bar" class="bar research-bar" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Combat & RTS -->
+                <div class="panel-section combat-panel">
+                    <h3>Fleet Command</h3>
+                    <div id="fleet-status">
+                        <p>Ships: <span id="ship-count">0</span></p>
+                        <p>Power: <span id="fleet-power">0</span></p>
+                    </div>
+                    <div class="combat-actions">
+                        <button onclick="game.buildShip('fighter')">🚀 Build Fighter (100 Credits)</button>
+                        <button onclick="game.buildShip('miner')">⛏️ Build Mining Ship (80 Credits)</button>
+                        <button onclick="game.buildShip('cruiser')">🛸 Build Cruiser (200 Credits)</button>
+                        <button onclick="game.attackEnemy()">⚔️ Attack Nearest Enemy</button>
+                    </div>
+                </div>
+
+                <!-- Territory & Monopoly System -->
+                <div class="panel-section territory-panel">
+                    <h3>Territory Control</h3>
+                    <div id="territory-list"></div>
+                    <div class="territory-actions">
+                        <button onclick="game.buyProperty()">💰 Buy Property</button>
+                        <button onclick="game.upgradeProperty()">⬆️ Upgrade Property</button>
+                        <button onclick="game.tradeWithAI()">🤝 Trade with AI</button>
+                    </div>
+                </div>
+
+                <!-- Achievements -->
+                <div class="panel-section achievements-panel">
+                    <h3>Achievements</h3>
+                    <div id="achievements-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Panel - Events & Messages -->
+        <div id="bottom-panel">
+            <div class="panel-header">
+                <h3>Mission Log</h3>
+                <button onclick="game.clearLog()">Clear</button>
+            </div>
+            <div id="event-log"></div>
+        </div>
+
+        <!-- Modal Dialogs -->
+        <div id="crafting-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="game.closeCraftingModal()">&times;</span>
+                <h2>Crafting Station</h2>
+                <div id="crafting-grid"></div>
+            </div>
+        </div>
+
+        <div id="tech-modal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="game.closeTechModal()">&times;</span>
+                <h2>Technology Tree</h2>
+                <div id="tech-grid"></div>
+            </div>
+        </div>
+
+        <!-- Pause Menu -->
+        <div id="pause-menu" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>Game Paused</h2>
+                <button onclick="game.resume()">Resume</button>
+                <button onclick="game.saveGame()">Save Game</button>
+                <button onclick="game.loadGame()">Load Game</button>
+                <button onclick="game.showSettings()">Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="enhancements.js"></script>
+    <script src="advanced-features.js"></script>
+</body>
+</html>
